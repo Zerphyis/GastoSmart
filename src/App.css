@@ -1,0 +1,38 @@
+.tema-claro {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.tema-claro input,
+.tema-claro select,
+.tema-claro button {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ccc;
+}
+
+.tema-escuro {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.tema-escuro input,
+.tema-escuro select,
+.tema-escuro button {
+  background-color: #333;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+.tema-escuro .tabela-transacoes th {
+  background-color: #444;
+  color: #fff;
+}
+
+.tema-escuro .tabela-transacoes tr:nth-child(even) {
+  background-color: #555;
+}
+
+.tema-escuro .tabela-transacoes tr:hover {
+  background-color: #666;
+}

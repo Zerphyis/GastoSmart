@@ -1,59 +1,67 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import "./TelaLogin.css";
+import { TemaContext } from '../TemaContext';
+import React, { useState, useContext } from 'react';  
+import { useNavigate } from 'react-router-dom';
 
 const TelaLogin = ({ setUsuarioLogado }) => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [erro, setErro] = useState('');
   const navigate = useNavigate();
+  
+  const { temaEscuro } = useContext(TemaContext); 
 
-  const usuariosCadastrados = [
-    { email: 'user1@example.com', senha: 'senha1', nome: 'Usuario' },
-    { email: 'user2@example.com', senha: 'senha2', nome: 'User 2' }
-  ];
+  const handleLogin = (e) => {
+    e.preventDefault();
 
-  const handleSubmit = () => {
-    const usuario = usuariosCadastrados.find(
-      (usuario) => usuario.email === email && usuario.senha === senha
-    );
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    const usuario = usuarios.find((u) => u.email === email && u.senha === senha);
 
     if (usuario) {
-      setUsuarioLogado(usuario);
-      navigate('/home');
+      localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
+      setUsuarioLogado(usuario); 
+      navigate('/home'); 
     } else {
-      alert('Email ou senha incorretos');
+      setErro('Email ou senha incorretos!');
     }
   };
 
   return (
-    <div className="container">
-      <div className="login-box">
-        <h2>Bem vindo ao Projeto</h2>
+    <div className={`login-container ${temaEscuro ? 'tema-escuro' : 'tema-claro'}`}>
+      <h2>Login</h2>
+      {erro && <p style={{ color: 'red' }}>{erro}</p>}
+      <form onSubmit={handleLogin}>
         <div className="input-group">
-          <label htmlFor="email">Email</label>
+          <label>Email:</label>
           <input
-            id="email"
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </div>
         <div className="input-group">
-          <label htmlFor="senha">Senha</label>
+          <label>Senha:</label>
           <input
-            id="senha"
             type="password"
             placeholder="Senha"
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
+            required
           />
         </div>
         <div className="button-container">
-          <button onClick={handleSubmit} className="login-btn">Entrar</button>
-          <button onClick={() => navigate('/cadastro')} className="login-btn">Cadastrar Usuário</button>
+          <button type="submit" className="login-btn">Entrar</button>
+          <button
+            type="button"
+            onClick={() => navigate('/cadastro')}
+            className="login-btn"
+          >
+            Cadastrar Usuário
+          </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

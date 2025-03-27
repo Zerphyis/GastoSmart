@@ -1,26 +1,31 @@
-import './TelaCadastro.css';
-import React, { useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
+import './TelaCadastro.css';
+import { TemaContext } from '../TemaContext';
+import React, { useState, useContext } from 'react';  
 
 
-
-function Cadastro() {
+const Cadastro = () => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const navigate = useNavigate();
+  const { temaEscuro } = useContext(TemaContext); 
 
   const handleCadastro = (e) => {
     e.preventDefault();
-    
-    localStorage.setItem('user', JSON.stringify({ nome, email, senha }));
-    
+
+    const novoUsuario = { nome, email, senha };
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    usuarios.push(novoUsuario);
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
     alert('Cadastro realizado com sucesso!');
     navigate('/');
   };
 
   return (
-    <div className="cadastro-box">
+    <div className={`cadastro-box ${temaEscuro ? 'tema-escuro' : 'tema-claro'}`}>
       <h2>Cadastro de Usuário</h2>
       <form onSubmit={handleCadastro}>
         <div className="input-group">
@@ -50,10 +55,10 @@ function Cadastro() {
             required
           />
         </div>
-        <button type="submit" className="cadastro-btn">Cadastrar</button>
+        <button type="submit">Cadastrar</button>
       </form>
     </div>
   );
-}
+};
 
 export default Cadastro;

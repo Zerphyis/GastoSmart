@@ -1,34 +1,27 @@
-body,
-html {
+body, html {
   height: 100%;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #dcdcdc; /* Cor de fundo cinza */
+  background-color: #f0f2f5;
 }
 
-.container {
-  display: grid;
-  place-items: center;
-  width: 100vw;
-  height: 100vh;
-  border: 2px solid;
-  border-radius: 10px;
-}
-
-.login-box {
+.login-container {
   background: white;
-  padding: 2.5rem; /* Aumentando o padding para tornar a tela maior */
+  padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra mais forte */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 350px; /* Aumentando a largura da tela de login */
+  width: 300px;
 }
 
-h2 {
-  margin-bottom: 1.5rem; /* Aumentando a margem inferior do título */
+.login-container h2 {
+  margin-bottom: 1.5rem;
+  color: #2d3436;
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
 .input-group {
@@ -39,9 +32,10 @@ h2 {
 }
 
 .input-group label {
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 5px;
   font-size: 14px;
+  color: #636e72;
 }
 
 .input-group input {
@@ -51,31 +45,41 @@ h2 {
   margin-top: 5px;
   font-size: 14px;
   outline: none;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .input-group input:focus {
-  border-color: #007bff;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 
 .button-container {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
   margin-top: 20px;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 16px;
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background-color: #758918;
+  background-color: #2980b9;
   color: white;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 48%;
 }
 
 button:hover {
-  background-color: #758918;
+  background-color: #3498db;
+  transform: translateY(-2px);
+}
+
+button.login-btn {
+  background-color: #2ecc71;
+}
+
+button.login-btn:hover {
+  background-color: #27ae60;
 }

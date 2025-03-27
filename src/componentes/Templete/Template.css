@@ -1,0 +1,189 @@
+.finance-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.finance-box {
+  background-color: inherit;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.saldo-total {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.transacao-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.transacao-form input,
+.transacao-form select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  flex: 1;
+}
+
+.transacao-form button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.transacao-form button:hover {
+  background-color: #0056b3;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.buttons button:hover {
+  opacity: 0.9;
+}
+
+.transacoes-list {
+  margin-top: 20px;
+}
+
+.tabela-transacoes {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.tabela-transacoes th,
+.tabela-transacoes td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.tabela-transacoes th {
+  background-color: #f2f2f2;
+  color: #000;
+  font-weight: bold;
+}
+
+.tabela-transacoes tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tabela-transacoes tr:hover {
+  background-color: #f1f1f1;
+}
+
+.btn-delete,
+.btn-edit-transacao {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.btn-delete {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #cc0000;
+}
+
+.btn-edit-transacao {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-edit-transacao:hover {
+  background-color: #45a049;
+}
+
+.tema-claro {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.tema-claro .input-claro {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ccc;
+}
+
+.tema-claro .btn-claro {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.tema-claro .tabela-claro th {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+.tema-claro .tabela-claro tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tema-claro .tabela-claro tr:hover {
+  background-color: #f1f1f1;
+}
+
+.tema-escuro {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.tema-escuro .input-escuro {
+  background-color: #333;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+.tema-escuro .btn-escuro {
+  background-color: #555;
+  color: #ffffff;
+}
+
+.tema-escuro .tabela-escuro th {
+  background-color: #444;
+  color: #fff;
+}
+
+.tema-escuro .tabela-escuro tr:nth-child(even) {
+  background-color: #555;
+}
+
+.tema-escuro .tabela-escuro tr:hover {
+  background-color: #666;
+}
