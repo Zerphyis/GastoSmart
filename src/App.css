@@ -36,3 +36,33 @@
 .tema-escuro .tabela-transacoes tr:hover {
   background-color: #666;
 }
+
+.container-botao {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-alternar-tema {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.tema-claro .btn-alternar-tema {
+  background-color: #99acc0;
+  color: white;
+}
+
+.tema-escuro .btn-alternar-tema {
+  background-color: #ff9800;
+  color: black;
+}
+
+.btn-alternar-tema:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,58 @@
+.grafico-page {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+}
+
+/* Título da página */
+.grafico-page h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Títulos dos gráficos */
+.grafico-page h3 {
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* Contêiner para os gráficos */
+.grafico-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap; /* Para garantir que se adapte a telas menores */
+}
+
+/* Estilo individual para os gráficos */
+.grafico-item {
+  flex: 1;
+  max-width: 500px; /* Limita o tamanho máximo de cada gráfico */
+  min-width: 300px; /* Define uma largura mínima para o gráfico */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grafico-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .grafico-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grafico-item {
+    max-width: 100%;
+  }
+}

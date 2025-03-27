@@ -1,3 +1,4 @@
+/* Container de Finanças */
 .finance-container {
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -23,6 +24,7 @@ h1 {
   margin-bottom: 20px;
 }
 
+/* Formulário de Transação */
 .transacao-form {
   display: flex;
   gap: 10px;
@@ -43,16 +45,17 @@ h1 {
   padding: 8px 16px;
   border: none;
   border-radius: 4px;
-  background-color: #007bff;
+  background-color: #808080; /* Cinza */
   color: white;
   cursor: pointer;
   font-size: 14px;
 }
 
 .transacao-form button:hover {
-  background-color: #0056b3;
+  background-color: #4CAF50; /* Verde */
 }
 
+/* Botões para Editar e Gráficos */
 .buttons {
   display: flex;
   gap: 10px;
@@ -65,10 +68,11 @@ h1 {
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
+  background-color: #808080; /* Cinza */
 }
 
 .buttons button:hover {
-  opacity: 0.9;
+  background-color: #4CAF50; /* Verde */
 }
 
 .transacoes-list {
@@ -102,6 +106,16 @@ h1 {
   background-color: #f1f1f1;
 }
 
+/* Cores Específicas para Tipos de Transação */
+.receita {
+  color: #4CAF50; /* Verde */
+}
+
+.despesa {
+  color: #FF4D4D; /* Vermelho */
+}
+
+/* Estilos para Botões de Excluir e Editar Transação */
 .btn-delete,
 .btn-edit-transacao {
   padding: 5px 10px;
@@ -110,26 +124,25 @@ h1 {
   cursor: pointer;
   font-size: 14px;
   margin-right: 5px;
+  background-color: #808080; /* Cinza */
+}
+
+.btn-delete:hover,
+.btn-edit-transacao:hover {
+  background-color: #4CAF50; /* Verde */
 }
 
 .btn-delete {
-  background-color: #ff4d4d;
+  background-color: #808080; /* Cinza */
   color: white;
-}
-
-.btn-delete:hover {
-  background-color: #cc0000;
 }
 
 .btn-edit-transacao {
-  background-color: #4CAF50;
+  background-color: #808080; /* Cinza */
   color: white;
 }
 
-.btn-edit-transacao:hover {
-  background-color: #45a049;
-}
-
+/* Estilos para Tema Claro */
 .tema-claro {
   background-color: #ffffff;
   color: #000000;
@@ -142,7 +155,7 @@ h1 {
 }
 
 .tema-claro .btn-claro {
-  background-color: #007bff;
+  background-color: #99acc0;
   color: #ffffff;
 }
 
@@ -159,6 +172,7 @@ h1 {
   background-color: #f1f1f1;
 }
 
+/* Estilos para Tema Escuro */
 .tema-escuro {
   background-color: #1e1e1e;
   color: #ffffff;
@@ -186,4 +200,20 @@ h1 {
 
 .tema-escuro .tabela-escuro tr:hover {
   background-color: #666;
+}
+
+/* Estilos para o Botão de Alternância de Tema */
+#btn-alternar-tema {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #808080; /* Cinza */
+  color: white;
+  margin-bottom: 20px;
+}
+
+#btn-alternar-tema:hover {
+  background-color: #4CAF50; /* Verde */
 }

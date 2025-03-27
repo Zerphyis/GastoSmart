@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import './Template.css';
 import React, { useState, useEffect, useContext } from 'react';
-import { Chart as ChartJS, ArcElement, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { TemaContext } from '../TemaContext';
+import { Chart as ChartJS, ArcElement, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(ArcElement, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -16,7 +16,7 @@ const FinanceApp = ({ usuario }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [transacaoEditando, setTransacaoEditando] = useState(null);
   const navigate = useNavigate();
-  const { temaEscuro } = useContext(TemaContext);
+  const { temaEscuro, toggleTema } = useContext(TemaContext); // Obtendo o contexto do tema
 
   useEffect(() => {
     localStorage.setItem('transacoes', JSON.stringify(transacoes));
@@ -70,11 +70,11 @@ const FinanceApp = ({ usuario }) => {
 
   return (
     <div className={`finance-container ${temaEscuro ? 'tema-escuro' : 'tema-claro'}`}>
-      <div className="finance-box">
+      <div className={`finance-box ${temaEscuro ? 'finance-box-escuro' : 'finance-box-claro'}`}>
         <h1>Bem-vindo, {usuario.nome || 'Usuário'}</h1>
         <p className="saldo-total">Saldo: R$ {saldoTotal.toFixed(2)}</p>
 
-        <div className="transacao-form">
+        <div className={`transacao-form ${temaEscuro ? 'transacao-form-escuro' : 'transacao-form-claro'}`}>
           <input
             type="text"
             placeholder="Descrição"
@@ -120,6 +120,12 @@ const FinanceApp = ({ usuario }) => {
             className={`btn-graficos ${temaEscuro ? 'btn-escuro' : 'btn-claro'}`}
           >
             Ver Gráficos
+          </button>
+          <button
+            onClick={toggleTema} // Alterando tema ao clicar
+            className={`btn-toggle-tema ${temaEscuro ? 'btn-escuro' : 'btn-claro'}`}
+          >
+            {temaEscuro ? 'Tema Claro' : 'Tema Escuro'}
           </button>
         </div>
 

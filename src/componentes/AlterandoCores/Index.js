@@ -1,22 +1,26 @@
 import React, { createContext, useState, useEffect } from 'react';
 
-export const TemaContext = createContext();
+export const TemaContext = createContext(null); 
 
 export const TemaProvider = ({ children }) => {
-  const [temaEscuro, setTemaEscuro] = useState(() => {
-    return JSON.parse(localStorage.getItem('temaEscuro')) || false;
-  });
+  const temaSalvo = localStorage.getItem('temaEscuro') === 'true';
+  const [temaEscuro, setTemaEscuro] = useState(temaSalvo);
 
-  const alternarTema = () => {
-    setTemaEscuro(!temaEscuro);
+  const toggleTema = () => {
+    setTemaEscuro((prevTema) => {
+      const novoTema = !prevTema;
+      localStorage.setItem('temaEscuro', novoTema);
+      return novoTema;
+    });
   };
 
   useEffect(() => {
-    localStorage.setItem('temaEscuro', JSON.stringify(temaEscuro));
+    document.body.classList.toggle('tema-escuro', temaEscuro);
+    document.body.classList.toggle('tema-claro', !temaEscuro);
   }, [temaEscuro]);
 
   return (
-    <TemaContext.Provider value={{ temaEscuro, alternarTema }}>
+    <TemaContext.Provider value={{ temaEscuro, toggleTema }}>
       {children}
     </TemaContext.Provider>
   );
