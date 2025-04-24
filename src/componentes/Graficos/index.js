@@ -1,10 +1,13 @@
-import React from 'react';
-import { Chart as ChartJS, ArcElement, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
-import { Pie, Bar } from 'react-chartjs-2';
+import { Pie, Bar } from 'react-chartjs-2'; // Certifique-se de que o Chart.js está importado corretamente
+import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale, BarElement } from 'chart.js';
 
-ChartJS.register(ArcElement, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale, BarElement);
 
 const GraficoComponent = ({ receitas, despesas }) => {
+  if (receitas === undefined || despesas === undefined) {
+    return <p>Carregando dados...</p>;
+  }
+
   const graficoDados = {
     labels: ['Receitas', 'Despesas'],
     datasets: [
@@ -17,6 +20,7 @@ const GraficoComponent = ({ receitas, despesas }) => {
 
   return (
     <div>
+      <h3>Gráfico de Receitas e Despesas</h3>
       <Pie data={graficoDados} />
       <Bar data={graficoDados} />
     </div>

@@ -5,7 +5,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 300px;
-  margin: 50px auto;
+  margin: 50px auto; /* Centraliza o contêiner na tela */
 }
 
 .cadastro-box h2, .login-box h2 {
@@ -28,6 +28,8 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-top: 5px;
+  width: 100%; 
+  box-sizing: border-box; 
 }
 
 .cadastro-btn, .login-btn {
@@ -44,4 +46,31 @@
 
 .cadastro-btn:hover, .login-btn:hover {
   opacity: 0.8;
+}
+
+
+@media (max-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0;
+  }
+
+  .cadastro-box, .login-box {
+    width: 95%;  
+    margin: 0;
+    padding: 1.5rem;
+  }
+
+  .input-group input {
+    font-size: 16px;
+    padding: 12px; 
+  }
+
+  .cadastro-btn, .login-btn {
+    font-size: 18px;  
+    padding: 12px;
+  }
 }

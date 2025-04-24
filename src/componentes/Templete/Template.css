@@ -217,3 +217,76 @@ h1 {
 #btn-alternar-tema:hover {
   background-color: #4CAF50; /* Verde */
 }
+
+@media (max-width: 768px) {
+  .finance-box {
+    width: 95%;
+    padding: 12px;
+    max-width: 420px;
+    margin: 10px auto;
+  }
+
+  .transacao-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .transacao-form input,
+  .transacao-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .transacao-form button {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .buttons button {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .tabela-transacoes th,
+  .tabela-transacoes td {
+    font-size: 12px;
+    padding: 6px;
+    box-sizing: border-box; 
+  }
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .saldo-total {
+    text-align: center;
+    font-size: 16px;
+    background-color: #e6f2ec;
+    color: #2e7d32;
+    padding: 6px 10px;
+    border: 1px solid #a5d6a7;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+    display: inline-block;
+  }
+
+  .transacoes-list h3 {
+    text-align: center;
+    font-size: 16px;
+  }
+}

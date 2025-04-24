@@ -121,12 +121,7 @@ const FinanceApp = ({ usuario }) => {
           >
             Ver Gráficos
           </button>
-          <button
-            onClick={toggleTema} // Alterando tema ao clicar
-            className={`btn-toggle-tema ${temaEscuro ? 'btn-escuro' : 'btn-claro'}`}
-          >
-            {temaEscuro ? 'Tema Claro' : 'Tema Escuro'}
-          </button>
+          
         </div>
 
         <div className="transacoes-list">
