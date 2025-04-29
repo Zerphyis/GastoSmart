@@ -70,7 +70,11 @@ const FinanceApp = ({ usuario }) => {
     <div className="finance-container">
       <div className="finance-box">
         <h1>Bem-vindo, {usuario.nome || 'Usuário'}</h1>
-        <p className="saldo-total">Saldo: R$ {saldoTotal.toFixed(2)}</p>
+
+        
+        <p className={saldoTotal < 0 ? 'saldo-negativo' : 'saldo-positivo'}>
+          Saldo: R$ {saldoTotal.toFixed(2)}
+        </p>
 
         <div className="transacao-form">
           <input
@@ -100,7 +104,7 @@ const FinanceApp = ({ usuario }) => {
           </select>
           <button
             onClick={isEditing ? editarTransacao : adicionarTransacao}
-            className="btn-claro"
+            className={`btn-claro ${saldoTotal < 0 ? 'btn-cinza' : ''}`} 
           >
             {isEditing ? 'Salvar Edição' : 'Adicionar'}
           </button>
@@ -109,13 +113,13 @@ const FinanceApp = ({ usuario }) => {
         <div className="buttons">
           <button
             onClick={() => setIsEditing(!isEditing)}
-            className="btn-claro"
+            className={`btn-claro ${saldoTotal < 0 ? 'btn-cinza' : ''}`}
           >
             {isEditing ? 'Cancelar Edição' : 'Editar Transações'}
           </button>
           <button
             onClick={irParaGraficos}
-            className="btn-claro"
+            className={`btn-claro ${saldoTotal < 0 ? 'btn-cinza' : ''}`}
           >
             Ver Gráficos
           </button>
