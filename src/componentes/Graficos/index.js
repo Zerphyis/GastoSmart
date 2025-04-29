@@ -1,4 +1,4 @@
-import { Pie, Bar } from 'react-chartjs-2'; // Certifique-se de que o Chart.js está importado corretamente
+import { Pie, Bar } from 'react-chartjs-2'; 
 import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale, BarElement } from 'chart.js';
 
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale, LinearScale, BarElement);
