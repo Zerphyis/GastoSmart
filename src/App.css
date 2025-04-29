@@ -1,3 +1,4 @@
+/* Estilos para o Tema Claro */
 .tema-claro {
   background-color: #ffffff;
   color: #000000;
@@ -11,56 +12,16 @@
   border: 1px solid #ccc;
 }
 
-.tema-escuro {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
-.tema-escuro input,
-.tema-escuro select,
-.tema-escuro button {
-  background-color: #333;
-  color: #ffffff;
-  border: 1px solid #555;
-}
-
-.tema-escuro .tabela-transacoes th {
-  background-color: #444;
-  color: #fff;
-}
-
-.tema-escuro .tabela-transacoes tr:nth-child(even) {
-  background-color: #555;
-}
-
-.tema-escuro .tabela-transacoes tr:hover {
-  background-color: #666;
-}
-
 .container-botao {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
-.btn-alternar-tema {
-  padding: 10px 15px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
 
 .tema-claro .btn-alternar-tema {
   background-color: #99acc0;
   color: white;
-}
-
-.tema-escuro .btn-alternar-tema {
-  background-color: #ff9800;
-  color: black;
 }
 
 .btn-alternar-tema:hover {
