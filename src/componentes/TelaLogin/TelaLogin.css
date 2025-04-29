@@ -14,7 +14,7 @@ body, html {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 300px; /* Largura fixa para desktop */
+  width: 300px;
 }
 
 .login-container h2 {
@@ -84,30 +84,29 @@ button.login-btn:hover {
   background-color: #27ae60;
 }
 
-/* Ajustes específicos para dispositivos móveis */
 @media (max-width: 768px) {
   .login-container {
     padding: 1.5rem;
-    width: 90%; /* Aumenta a largura para dispositivos móveis */
-    max-width: 400px; /* Ajusta o máximo para um tamanho maior no mobile */
+    width: 90%; 
+    max-width: 400px; 
   }
 
   .input-group input {
     font-size: 16px;
-    padding: 14px; /* Aumenta o padding dos inputs */
+    padding: 14px;
   }
 
   .login-container h2 {
-    font-size: 1.4rem; /* Ajusta o tamanho do título para telas menores */
+    font-size: 1.4rem; 
   }
 
   .button-container {
-    flex-direction: column; /* Organiza os botões em coluna */
-    gap: 10px; /* Adiciona espaçamento entre os botões */
+    flex-direction: column; 
+    gap: 10px; 
   }
 
   button {
-    width: 100%; /* Botões ocupam 100% da largura em telas menores */
-    padding: 14px; /* Aumenta o padding dos botões */
+    width: 100%; 
+    padding: 14px; 
   }
 }
