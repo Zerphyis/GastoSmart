@@ -1,16 +1,12 @@
-
 import { useNavigate } from 'react-router-dom';
 import './TelaCadastro.css';
-import { TemaContext } from '../TemaContext';
-import React, { useState, useContext } from 'react';  
-
+import React, { useState } from 'react';  
 
 const Cadastro = () => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const navigate = useNavigate();
-  const { temaEscuro } = useContext(TemaContext); 
 
   const handleCadastro = (e) => {
     e.preventDefault();
@@ -25,7 +21,7 @@ const Cadastro = () => {
   };
 
   return (
-    <div className={`cadastro-box ${temaEscuro ? 'tema-escuro' : 'tema-claro'}`}>
+    <div className="cadastro-box">
       <h2>Cadastro de Usuário</h2>
       <form onSubmit={handleCadastro}>
         <div className="input-group">
