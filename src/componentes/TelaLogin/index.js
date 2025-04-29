@@ -1,6 +1,5 @@
 import "./TelaLogin.css";
-import { TemaContext } from '../TemaContext';
-import React, { useState, useContext } from 'react';  
+import React, { useState } from 'react';  
 import { useNavigate } from 'react-router-dom';
 
 const TelaLogin = ({ setUsuarioLogado }) => {
@@ -8,8 +7,6 @@ const TelaLogin = ({ setUsuarioLogado }) => {
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');
   const navigate = useNavigate();
-  
-  const { temaEscuro } = useContext(TemaContext); 
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -27,7 +24,7 @@ const TelaLogin = ({ setUsuarioLogado }) => {
   };
 
   return (
-    <div className={`login-container ${temaEscuro ? 'tema-escuro' : 'tema-claro'}`}>
+    <div className="login-container">
       <h2>Login</h2>
       {erro && <p style={{ color: 'red' }}>{erro}</p>}
       <form onSubmit={handleLogin}>
