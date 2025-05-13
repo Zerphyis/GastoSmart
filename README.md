@@ -35,9 +35,3 @@
     Tela Inicial: Mostra o saldo atual, opções para adicionar uma transação (receita ou despesa), e um menu para acessar os gráficos.
     Tela de Transações: Exibe a lista de transações registradas, com opções para editar ou excluir cada uma.
     Tela de Gráficos: Exibe gráficos simples de análise de despesas e receitas ao longo do tempo.
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
