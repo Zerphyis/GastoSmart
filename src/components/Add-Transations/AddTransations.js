@@ -10,14 +10,14 @@ export default function AddTransaction({ onAddTransaction }) {
     e.preventDefault();
 
     if (!text.trim() || !amount.trim()) {
-      setError("Please enter both description and amount");
+      setError("Por favor, insira a descrição e o valor");
       return;
     }
 
     const amountValue = Number.parseFloat(amount);
 
     if (isNaN(amountValue)) {
-      setError("Please enter a valid number for amount");
+      setError("Por favor, insira um número válido para o valor");
       return;
     }
 
