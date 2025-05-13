@@ -11,11 +11,13 @@ export default function Analytics({ transactions }) {
 
   const expenseTotal = transactions.filter((t) => t.amount < 0).reduce((sum, t) => sum + Math.abs(t.amount), 0);
 
+  //Valores do Gráfico de pizza
   const pieData = [
     { name: "Receitas", value: incomeTotal, color: "#10b981" },
     { name: "Despesas", value: expenseTotal, color: "#ef4444" },
   ];
 
+//Valores para o Pdf Criado
   const monthlyData = transactions.reduce((acc, transaction) => {
     const date = new Date(transaction.date || new Date());
     const monthYear = `${date.getMonth() + 1}/${date.getFullYear()}`;
@@ -52,6 +54,8 @@ export default function Analytics({ transactions }) {
   };
 
   return (
+
+          //Div do Campo Análise Financeira 
     <div>
       <div className="header-container">
         <h3 className="title">Análise Financeira</h3>
@@ -67,6 +71,7 @@ export default function Analytics({ transactions }) {
               <LineChart size={16} />
             </button>
           </div>
+           {/* Botão de Baixar Pdf*/}
           <button onClick={handleDownloadPDF} className="download-button">
             <DownloadIcon size={16} />
             <span>PDF</span>
@@ -74,12 +79,16 @@ export default function Analytics({ transactions }) {
         </div>
       </div>
 
+      {/* Verificando se Existe transações*/}
       {transactions.length === 0 ? (
         <div className="no-data-message">
           <p>Nenhum dado de transação para exibir</p>
           <p className="small-text">Adicione algumas transações para ver suas análises finanças</p>
         </div>
       ) : (
+        
+        //Estilo para o Gráfico de pizza
+
         <div className="chart-container">
           {chartType === "pie" && (
             <ResponsiveContainer width="100%" height="100%">
@@ -104,6 +113,8 @@ export default function Analytics({ transactions }) {
             </ResponsiveContainer>
           )}
 
+              {/*Estilo para o Gráfico de barras*/}
+
           {chartType === "bar" && (
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={timeSeriesData}>
@@ -117,6 +128,7 @@ export default function Analytics({ transactions }) {
             </ResponsiveContainer>
           )}
 
+               {/*Estilo para o Gráfico de Linhas*/}
           {chartType === "line" && (
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={timeSeriesData}>
@@ -131,7 +143,7 @@ export default function Analytics({ transactions }) {
           )}
         </div>
       )}
-
+               {/*Div do Footer de Analise*/}
       <div className="summary-container">
         <h4 className="summary-title">Sumário</h4>
         <div className="summary-cards">

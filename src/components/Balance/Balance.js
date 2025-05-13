@@ -7,6 +7,7 @@ export default function Balance({ transactions }) {
   const isPositive = Number.parseFloat(total) >= 0;
 
   return (
+    //Mostrando Saldo
     <div className="balance-container">
       <h4 className="balance-title">Seu Saldo</h4>
       <h1 className={`balance-amount ${isPositive ? "positive" : "negative"}`}>${total}</h1>

@@ -13,6 +13,8 @@ export default function IncomeExpenses({ transactions }) {
   ).toFixed(2);
 
   return (
+
+    //Mostrando o saldo ê quando tem de gastos e receitas
     <div className="income-expenses-container">
       <div className="income-expenses-content">
         <div className="income-expenses-section">
