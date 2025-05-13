@@ -1,0 +1,16 @@
+.header-container {
+  margin-bottom: 1rem;
+}
+
+.header-title {
+  font-size: 1.875rem; 
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0.05px;
+}
+
+.header-subtitle {
+  color: #4b5563;
+  margin-top: 0.25rem;
+  margin-left: 1rem;
+}
