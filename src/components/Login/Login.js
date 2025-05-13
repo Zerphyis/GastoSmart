@@ -22,7 +22,7 @@ export default function Login({ onLogin, onSwitch }) {
     <div className="login-container">
       <div className="login-box">
         <div className="login-header">
-          <h1>GastoSmart</h1>
+          <h1>Gasto$mart</h1>
           <p>Gerencie suas finanças</p>
         </div>
 
