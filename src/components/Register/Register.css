@@ -1,4 +1,3 @@
-/* Garante que padding seja considerado no tamanho total */
 * {
   box-sizing: border-box;
 }

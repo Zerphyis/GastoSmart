@@ -1,5 +1,5 @@
 import React from "react";
-import './Balance.css'; // Importando o CSS
+import './Balance.css'; 
 
 export default function Balance({ transactions }) {
   const amounts = transactions.map((transaction) => transaction.amount);

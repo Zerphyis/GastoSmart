@@ -37,11 +37,11 @@
 }
 
 .transaction-income {
-  border-right-color: #10b981; /* green */
+  border-right-color: #10b981; 
 }
 
 .transaction-expense {
-  border-right-color: #ef4444; /* red */
+  border-right-color: #ef4444;
 }
 
 .transaction-details {

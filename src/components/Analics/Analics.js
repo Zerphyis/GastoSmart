@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { PieChart, BarChart, LineChart, Pie, Bar, Line, Cell, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { generatePDF } from "../../lib/GeneraitorPdf";
 import { DownloadIcon } from "lucide-react";
-import './Analics.css'; // Importando o CSS
+import './Analics.css'; 
 
 export default function Analytics({ transactions }) {
   const [chartType, setChartType] = useState("pie");
 
-  // Calculate income vs expense data for pie chart
   const incomeTotal = transactions.filter((t) => t.amount > 0).reduce((sum, t) => sum + t.amount, 0);
 
   const expenseTotal = transactions.filter((t) => t.amount < 0).reduce((sum, t) => sum + Math.abs(t.amount), 0);
@@ -17,7 +16,6 @@ export default function Analytics({ transactions }) {
     { name: "Despesas", value: expenseTotal, color: "#ef4444" },
   ];
 
-  // Process transactions by month for bar/line chart
   const monthlyData = transactions.reduce((acc, transaction) => {
     const date = new Date(transaction.date || new Date());
     const monthYear = `${date.getMonth() + 1}/${date.getFullYear()}`;
