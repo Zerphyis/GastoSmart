@@ -11,15 +11,14 @@ export function cn(...inputs) {
 }
 
 /**
- * Formata uma data no formato "MMM dd, yyyy" em inglês
  * @param {string} dateString - Data em string (ISO, etc.)
- * @returns {string} - Data formatada (Ex: Jan 01, 2025)
+ * @returns {string} - Data formatada (Ex: 13 de maio de 2025)
  */
 export function formatDate(dateString) {
-  const date = new Date(dateString)
-  return date.toLocaleDateString("en-US", {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("pt-BR", {
     year: "numeric",
-    month: "short",
-    day: "numeric",
-  })
+    month: "long",
+    day: "2-digit",
+  });
 }
