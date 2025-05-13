@@ -1,0 +1,26 @@
+
+.balance-container {
+  background-color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.balance-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+.balance-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.balance-amount.positive {
+  color: #4a4a4a;
+}
+
+.balance-amount.negative {
+  color: #ef4444;
+}
