@@ -13,8 +13,8 @@ export default function Analytics({ transactions }) {
   const expenseTotal = transactions.filter((t) => t.amount < 0).reduce((sum, t) => sum + Math.abs(t.amount), 0);
 
   const pieData = [
-    { name: "Income", value: incomeTotal, color: "#10b981" },
-    { name: "Expenses", value: expenseTotal, color: "#ef4444" },
+    { name: "Receitas", value: incomeTotal, color: "#10b981" },
+    { name: "Despesas", value: expenseTotal, color: "#ef4444" },
   ];
 
   // Process transactions by month for bar/line chart
@@ -113,8 +113,8 @@ export default function Analytics({ transactions }) {
                 <YAxis />
                 <Tooltip formatter={(value) => `$${value.toFixed(2)}`} />
                 <Legend />
-                <Bar dataKey="income" fill="#10b981" name="Income" />
-                <Bar dataKey="expense" fill="#ef4444" name="Expense" />
+                <Bar dataKey="income" fill="#10b981" name="Receita" />
+                <Bar dataKey="expense" fill="#ef4444" name="Despesas" />
               </BarChart>
             </ResponsiveContainer>
           )}
@@ -126,8 +126,8 @@ export default function Analytics({ transactions }) {
                 <YAxis />
                 <Tooltip formatter={(value) => `$${value.toFixed(2)}`} />
                 <Legend />
-                <Line type="monotone" dataKey="income" stroke="#10b981" name="Income" />
-                <Line type="monotone" dataKey="expense" stroke="#ef4444" name="Expense" />
+                <Line type="monotone" dataKey="income" stroke="#10b981" name="Receita" />
+                <Line type="monotone" dataKey="expense" stroke="#ef4444" name="Despesas" />
               </LineChart>
             </ResponsiveContainer>
           )}
