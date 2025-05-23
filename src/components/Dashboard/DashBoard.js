@@ -1,5 +1,5 @@
-
 import { useState } from "react";
+import Swal from 'sweetalert2';
 import Header from "../Header/Header";
 import Balance from "../Balance/Balance";
 import IncomeExpenses from "../IncomeExpenses/IncomeExpenses";
@@ -8,6 +8,7 @@ import AddTransaction from "../Add-Transations/AddTransations";
 import Analytics from "../Analics/Analics";
 import { LogOut, PieChart, History, Plus } from "lucide-react";
 import './DashBoard.css'; 
+
 export default function Dashboard({
   user,
   transactions,
@@ -17,12 +18,29 @@ export default function Dashboard({
 }) {
   const [activeTab, setActiveTab] = useState("transactions");
 
+  const handleLogout = () => {
+    Swal.fire({
+      title: 'Sair da Conta?',
+      text: 'Tem certeza que deseja sair?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#FF3B30',
+      cancelButtonColor: '#A9A9A9',
+      confirmButtonText: 'Sim, sair',
+      cancelButtonText: 'Cancelar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        onLogout();
+      }
+    });
+  };
+
   return (
     <div className="dashboard-container">
       <div className="dashboard-inner-container">
         <div className="dashboard-header">
           <Header userName={user.name} />
-          <button onClick={onLogout} className="logout-button">
+          <button onClick={handleLogout} className="logout-button">
             <LogOut size={16} />
             <span>Sair da Conta</span>
           </button>
@@ -60,7 +78,10 @@ export default function Dashboard({
 
           <div className="tabs-content">
             {activeTab === "transactions" && (
-              <TransactionList transactions={transactions} onDeleteTransaction={onDeleteTransaction} />
+              <TransactionList
+                transactions={transactions}
+                onDeleteTransaction={onDeleteTransaction}
+              />
             )}
             {activeTab === "analytics" && <Analytics transactions={transactions} />}
             {activeTab === "add" && <AddTransaction onAddTransaction={onAddTransaction} />}
