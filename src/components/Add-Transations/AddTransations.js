@@ -9,14 +9,12 @@ export default function AddTransaction({ onAddTransaction }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    //Verificando se ambos os campos estão preenchidos
     if (!text.trim() || !amount.trim()) {
       setError("Por favor, insira a descrição e o valor");
       return;
     }
 
     const amountValue = Number.parseFloat(amount);
-    //Verificando se o numero e válido
     if (isNaN(amountValue)) {
       setError("Por favor, insira um número válido para o valor");
       return;
@@ -33,13 +31,11 @@ export default function AddTransaction({ onAddTransaction }) {
   };
 
   return (
-    //Div de Adicionar nova Transações
     <div>
       <h3 className="add-transaction-title">Adicionar Nova Transações</h3>
       {error && <div className="error-message">{error}</div>}
       <form onSubmit={handleSubmit} className="form-container">
         <div>
-          {/*Campo de Descrição */}
           <label htmlFor="text" className="form-label">
            Descrição
           </label>
@@ -54,7 +50,6 @@ export default function AddTransaction({ onAddTransaction }) {
         </div>
 
         <div>
-           {/* Campo Quantia */}
           <label htmlFor="amount" className="form-label">
           Quantia
             <span className="amount-info">(negativo - despesa, positivo - receita)</span>
@@ -68,7 +63,6 @@ export default function AddTransaction({ onAddTransaction }) {
             className="form-input"
           />
         </div>
-           {/*Botão para criar Transação */}
         <button type="submit" className="submit-button">
         Adicionar Transação
         </button>
