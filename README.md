@@ -1,37 +1,89 @@
-<h1>  GastoSmart </h1>
-    
 
-<h2> Descrição do Projeto:</h2>
-    O "GastoSmart" é uma aplicação simples de controle financeiro pessoal, onde os usuários podem registrar suas receitas e despesas diárias, acompanhar seu saldo e visualizar gráficos simples que ajudam a entender seus hábitos financeiros. Os dados são salvos localmente usando o LocalStorage, garantindo que as informações sejam preservadas mesmo após o fechamento do navegador.
+# 💸 GastoSmart
 
- <h2> Justificativa:</h2>
-    A ideia surgiu devido à crescente necessidade de as pessoas gerenciarem seus gastos e se organizarem financeiramente. Em um mundo cada vez mais digital, ter uma ferramenta simples, acessível e que ajude a controlar as finanças diárias pode facilitar a tomada de decisões financeiras conscientes, evitando o endividamento e promovendo uma vida financeira mais equilibrada.
+**GastoSmart** é uma aplicação de controle financeiro pessoal desenvolvida em **React.js**, com o objetivo de ajudar usuários a registrar, visualizar e analisar suas receitas e despesas de forma simples e intuitiva.
 
-<h2>Objetivo:</h2>
-    Desenvolver uma aplicação de controle financeiro simples e eficiente para que os usuários possam:
-        Registrar receitas e despesas.
-        Visualizar o saldo atualizado automaticamente.
-        Acompanhar o histórico de transações.
-        Observar gráficos básicos que forneçam uma visão clara dos gastos mensais.
-        Armazenar dados localmente para persistência entre sessões.
+## 🚀 Tecnologias Utilizadas
 
-<h2> Lista de Requisitos Funcionais (RF):</h2>
-    RF01: O sistema deve permitir ao usuário registrar receitas e despesas com valores e descrições.
-    <br>
-    RF02: O sistema deve calcular e mostrar o saldo total (receitas - despesas) em tempo real.
-      <br>
-    RF03: O sistema deve exibir uma lista com todas as transações registradas.
-      <br>
-    RF04: O sistema deve gerar gráficos simples (como gráficos de pizza ou barras) para representar as receitas e despesas por categoria ou por período (ex: mensal).
-      <br>
-    RF05: O sistema deve salvar os dados no LocalStorage, permitindo que os dados persistam entre sessões.
-      <br>
-    RF06: O sistema deve permitir que o usuário edite ou exclua transações já registradas.
-      <br>
-    RF07: O sistema deve ter uma interface simples e intuitiva.
-      <br>
+- [React.js](https://reactjs.org/)
+- [Chart.js](https://www.chartjs.org/) para gráficos
+- [html2pdf.js](https://ekoopmans.github.io/html2pdf.js/) para geração de relatórios em PDF
+- CSS puro para estilização
+- Local Storage para persistência de dados (frontend)
 
-<h2>Protótipo: </h2>
-    Tela Inicial: Mostra o saldo atual, opções para adicionar uma transação (receita ou despesa), e um menu para acessar os gráficos.
-    Tela de Transações: Exibe a lista de transações registradas, com opções para editar ou excluir cada uma.
-    Tela de Gráficos: Exibe gráficos simples de análise de despesas e receitas ao longo do tempo.
+## 📁 Estrutura de Pastas
+<br>
+GastoSmart-master/
+<br>
+├── public/ # Arquivos públicos e estáticos
+<br>
+├── src/ # Código-fonte principal
+<br>
+│ ├── components/ # Componentes React modulares
+<br>
+│ ├── lib/ # Utilitários e funções auxiliares
+<br>
+│ ├── types/ # Tipagens de objetos (transações, usuários)
+<br>
+│ ├── App.js # Componente principal da aplicação
+<br>
+│ └── index.js # Ponto de entrada da aplicação
+
+## ⚙️ Como Rodar o Projeto
+```
+  1. Clone este repositório:
+   git clone https://github.com/seu-usuario/GastoSmart.git
+
+  2.Instale as dependências:
+    npm install
+
+  3.Inicie o projeto:
+    npm start
+````
+
+## 📦 Explicação dos Principais Componentes
+### 1. App.js
+É o ponto central da aplicação. Define rotas, contexto global (como autenticação) e organiza os principais componentes da interface.
+
+### 2. components/
+Cada pasta representa um componente modular:
+
+### 🔐 Login/ & Register/
+Permitem autenticação fictícia do usuário (sem backend).
+
+Simulam sessão usando localStorage.
+
+### 🧾 Add-Transations/
+Componente de formulário para adicionar nova transação (renda ou despesa).
+
+Atualiza o contexto global.
+
+### 📋 Transations-List/
+Lista todas as transações do usuário.
+
+Permite remover itens.
+
+### ⚖️ Balance/ & IncomeExpenses/
+Exibem o saldo total, entradas e saídas.
+
+São recalculados dinamicamente.
+
+### 📊 Analics/ & Ui/Chart*
+Mostram gráficos estatísticos usando Chart.js.
+
+Grupos por categorias, comparação mês a mês, etc.
+
+### 📁 Dashboard/
+Página principal com todos os dados financeiros agregados.
+
+Serve como painel de controle central.
+
+### 3. lib/
+### 🧰 Utils.js
+Funções auxiliares para formatação de datas, cálculos de totais, etc.
+
+### 🧾 GeneraitorPdf.js
+Gera relatório PDF com os dados do usuário usando html2pdf.
+
+### 4. types/
+Define tipagens para transações e usuários, útil para padronização e prevenção de erros.
