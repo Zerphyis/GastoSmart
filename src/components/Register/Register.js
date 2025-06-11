@@ -43,7 +43,7 @@ export default function Register({ onRegister, onSwitch }) {
     <div className="register-container">
       <div className="register-box">
         <div className="register-header">
-          <h1>GastoSmart</h1>
+          <h1>Gasto$mart</h1>
           <p>Crie uma conta para começar</p>
         </div>
 
