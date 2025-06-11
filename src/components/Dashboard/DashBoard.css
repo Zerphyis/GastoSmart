@@ -19,16 +19,23 @@
 .logout-button {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  color: #4a4a4a;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #1f2937;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
-  transition: color 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .logout-button:hover {
-  color: #1f2937;
+  background-color: #808080;
+  transform: scale(1.05);
 }
-
 .dashboard-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
